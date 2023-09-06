@@ -23,7 +23,7 @@ else:
     else:
         # Transaction date is on or after the 1st, payment due date is the 18th of the month after the next
         if transaction_date.month == 11:
-            due_date = datetime(transaction_date.year + 1, 2, 5)
+            due_date = datetime(transaction_date.year + 1, 1, 5)
         elif transaction_date.month == 12:
             due_date = datetime(transaction_date.year + 1, 2, 5)
         else:

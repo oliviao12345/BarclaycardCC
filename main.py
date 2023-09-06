@@ -14,20 +14,20 @@ if transaction_date.year != current_date.year:
     print("Please enter the current year.")
 else:
     # Calculate the payment due date
-    if transaction_date.day < 1:
+    if transaction_date.day < 12:
         # Transaction date is before the 1st, payment due date is the 18th of the next month
         if transaction_date.month == 12:
-            due_date = datetime(transaction_date.year + 1, 1, 18)
+            due_date = datetime(transaction_date.year + 1, 1, 5)
         else:
             due_date = datetime(transaction_date.year, transaction_date.month + 1, 18)
     else:
         # Transaction date is on or after the 1st, payment due date is the 18th of the month after the next
         if transaction_date.month == 11:
-            due_date = datetime(transaction_date.year + 1, 1, 18)
+            due_date = datetime(transaction_date.year + 1, 2, 5)
         elif transaction_date.month == 12:
-            due_date = datetime(transaction_date.year + 1, 1, 18)
+            due_date = datetime(transaction_date.year + 1, 2, 5)
         else:
-            due_date = datetime(transaction_date.year, transaction_date.month + 1, 18)
+            due_date = datetime(transaction_date.year, transaction_date.month + 2, 5)
 
     # Calculate the number of days until due date
     days_until_due = (due_date - current_date).days
